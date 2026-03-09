@@ -189,6 +189,7 @@
   </button>
 
   <!-- More Works Dropdown -->
+  <!--
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -234,7 +235,8 @@
         </a>
       </div>
     </div>
-  </div> -->
+  </div>
+  -->
 
   <main id="main-content">
   <section class="hero">
@@ -287,9 +289,8 @@
                 </span>
 
                 <!-- TODO: Update with your arXiv paper ID -->
-                <!--
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2602.19753>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -297,7 +298,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              -->
             </div>
           </div>
         </div>
@@ -324,6 +324,133 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- RAP Framework -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">RAP Training and Inference Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            The figure below shows the training framework of RAP. During training, RAP learns importance prediction from intrinsic Gaussian attributes and local neighborhood statistics. During evaluation, we directly extract features and feed them into the trained MLP to obtain importance scores, without rendering-based analysis.
+          </p>
+        </div>
+        <figure class="image">
+          <img src="static/images/framework.png" alt="RAP training and inference framework">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End RAP Framework -->
+
+<!-- RD Curve -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Direct Pruning without Optimization</h2>
+        <div class="content has-text-justified">
+          <p>
+            RD curves on Mip-NeRF360, Deep Blending, and Tanks&amp;Temples. This result corresponds to direct pruning without post-optimization.
+          </p>
+        </div>
+        <figure class="image">
+          <img src="static/images/rd_curve_by_PSNR_baseline_dataset_avg.png" alt="RD curve by PSNR on Mip-NeRF360, Deep Blending, and Tanks and Temples">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End RD Curve -->
+
+<!-- Reconstruction During Iterative Pruning -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Iterative Pruning Behavior</h2>
+        <div class="content has-text-justified">
+          <p>
+            Visualization of iterative pruning where 40% primitives are pruned every 1500 iterations.
+          </p>
+        </div>
+        <figure class="image">
+          <img src="static/images/rec_pruning.png" alt="Iterative pruning with 40 percent removal every 1500 iterations">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Reconstruction During Iterative Pruning -->
+
+<!-- 5 Percent Visualization -->
+<section class="section hero is-light" id="five-percent-vis">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">5% Primitive Retention Visualization</h2>
+        <div class="content has-text-justified">
+          <p>
+            Only 5% primitives are retained. LightGS (visibility-based) tends to preserve central regions that are visible from most views, often causing strong background distortion. PUP (gradient-based) tends to preserve boundaries. RAP provides a more uniform downsampling over the whole scene. Different importance prediction strategies can be selected based on application needs.
+          </p>
+        </div>
+
+        <div class="field is-grouped is-align-items-center mb-4">
+          <label class="label mb-0 mr-3" for="scene-select">Scene:</label>
+          <div class="control">
+            <div class="select is-medium">
+              <select id="scene-select">
+                <option value="bicycle">bicycle</option>
+                <option value="bonsai">bonsai</option>
+                <option value="counter">counter</option>
+                <option value="drjohnson">drjohnson</option>
+                <option value="flowers">flowers</option>
+                <option value="garden">garden</option>
+                <option value="kitchen">kitchen</option>
+                <option value="playroom">playroom</option>
+                <option value="room">room</option>
+                <option value="stump">stump</option>
+                <option value="train" selected>train</option>
+                <option value="treehill">treehill</option>
+                <option value="truck">truck</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-half">
+            <p class="has-text-centered"><strong>GT</strong></p>
+            <figure class="image">
+              <img id="img-gt" src="static/images/5percent_vis/train_00000_gt.png" alt="Ground truth at selected scene">
+            </figure>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-centered"><strong>LightGS</strong></p>
+            <figure class="image">
+              <img id="img-light" src="static/images/5percent_vis/train_00000_light.png" alt="LightGS result at selected scene">
+            </figure>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-centered"><strong>PUP</strong></p>
+            <figure class="image">
+              <img id="img-pup" src="static/images/5percent_vis/train_00000_pup.png" alt="PUP result at selected scene">
+            </figure>
+          </div>
+          <div class="column is-half">
+            <p class="has-text-centered"><strong>RAP</strong></p>
+            <figure class="image">
+              <img id="img-rap" src="static/images/5percent_vis/train_00000_rap.png" alt="RAP result at selected scene">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End 5 Percent Visualization -->
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
@@ -370,6 +497,27 @@
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+
+  <script>
+    (function () {
+      var sceneSelect = document.getElementById("scene-select");
+      if (!sceneSelect) {
+        return;
+      }
+
+      function updateSceneImages(sceneName) {
+        var base = "static/images/5percent_vis/" + sceneName + "_00000_";
+        document.getElementById("img-gt").src = base + "gt.png";
+        document.getElementById("img-light").src = base + "light.png";
+        document.getElementById("img-pup").src = base + "pup.png";
+        document.getElementById("img-rap").src = base + "rap.png";
+      }
+
+      sceneSelect.addEventListener("change", function (event) {
+        updateSceneImages(event.target.value);
+      });
+    })();
+  </script>
 
   </body>
   </html>
