@@ -6,11 +6,11 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing">
+  <meta name="title" content="RAP 3DGS Pruning: Rendering-Free Primitive Importance Prediction">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="We propose RAP, a fast rendering-free importance prediction method for 3D Gaussian Splatting. RAP leverages intrinsic Gaussian attributes and local neighborhood statistics to directly predict primitive importance using a lightweight MLP, without requiring multi-view rendering analysis. The method generalizes well and can serve as a plug-and-play module for pruning, compression, and transmission tasks, significantly improving efficiency and storage compactness while preserving reconstruction quality.">
+  <meta name="description" content="RAP is a rendering-free 3DGS pruning method for 3D Gaussian Splatting. It predicts primitive importance from Gaussian attributes and neighborhood statistics using a lightweight MLP, enabling efficient pruning, compression, and transmission.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="3D Gaussian Splatting, Importance Prediction, Rendering-Free, 3D Scene Reconstruction, Gaussian Pruning">
+  <meta name="keywords" content="RAP 3DGS pruning, 3DGS pruning, 3D Gaussian Splatting pruning, Gaussian pruning, rendering-free importance prediction, 3D Gaussian Splatting">
   <!-- TODO: List all authors -->
   <meta name="author" content="Kaifa Yang, Qi Yang, Yiling Xu, Zhu Li">
   <meta name="robots" content="index, follow">
@@ -21,9 +21,9 @@
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="Shanghai Jiao Tong University">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing">
+  <meta property="og:title" content="RAP 3DGS Pruning: Rendering-Free Primitive Importance Prediction">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="We propose RAP, a fast rendering-free importance prediction method for 3D Gaussian Splatting. RAP leverages intrinsic Gaussian attributes and local neighborhood statistics to directly predict primitive importance using a lightweight MLP, without requiring multi-view rendering analysis. The method generalizes well and can serve as a plug-and-play module for pruning, compression, and transmission tasks, significantly improving efficiency and storage compactness while preserving reconstruction quality.">
+  <meta property="og:description" content="RAP is a rendering-free 3DGS pruning method for 3D Gaussian Splatting. It predicts primitive importance from Gaussian attributes and neighborhood statistics using a lightweight MLP.">
   <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="https://sekiroyyy.github.io/rap_webpage/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
@@ -76,7 +76,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing - Kaifa Yang, Qi Yang, Yiling Xu, Zhu Li</title>
+  <title>RAP 3DGS Pruning: Rendering-Free Primitive Importance Prediction - Kaifa Yang, Qi Yang, Yiling Xu, Zhu Li</title>
   
   <!-- Favicon and App Icons -->
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
@@ -188,56 +188,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <!--
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-  -->
-
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
@@ -290,7 +240,7 @@
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2602.19753>" target="_blank"
+                  <a href="https://arxiv.org/abs/2602.19753" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -370,10 +320,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3 has-text-centered">Iterative Pruning Behavior</h2>
+        <h2 class="title is-3 has-text-centered">Reconstruction with Pruning</h2>
         <div class="content has-text-justified">
           <p>
-            Visualization of iterative pruning where 40% primitives are pruned every 1500 iterations.
+            Results of reconstruction with pruning 40% primitives every 1500 iterations.
           </p>
         </div>
         <figure class="image">
@@ -401,7 +351,7 @@
           <label class="label mb-0 mr-3" for="scene-select">Scene:</label>
           <div class="control">
             <div class="select is-medium">
-              <select id="scene-select">
+              <select id="scene-select" onchange="updateSceneImages(this.value)">
                 <option value="bicycle">bicycle</option>
                 <option value="bonsai">bonsai</option>
                 <option value="counter">counter</option>
@@ -499,24 +449,30 @@
     <!-- End of Statcounter Code -->
 
   <script>
-    (function () {
+    function updateSceneImages(sceneName) {
+      var base = "static/images/5percent_vis/" + sceneName + "_00000_";
+      var imgGt = document.getElementById("img-gt");
+      var imgLight = document.getElementById("img-light");
+      var imgPup = document.getElementById("img-pup");
+      var imgRap = document.getElementById("img-rap");
+
+      if (!imgGt || !imgLight || !imgPup || !imgRap) {
+        return;
+      }
+
+      imgGt.src = base + "gt.png";
+      imgLight.src = base + "light.png";
+      imgPup.src = base + "pup.png";
+      imgRap.src = base + "rap.png";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
       var sceneSelect = document.getElementById("scene-select");
       if (!sceneSelect) {
         return;
       }
-
-      function updateSceneImages(sceneName) {
-        var base = "static/images/5percent_vis/" + sceneName + "_00000_";
-        document.getElementById("img-gt").src = base + "gt.png";
-        document.getElementById("img-light").src = base + "light.png";
-        document.getElementById("img-pup").src = base + "pup.png";
-        document.getElementById("img-rap").src = base + "rap.png";
-      }
-
-      sceneSelect.addEventListener("change", function (event) {
-        updateSceneImages(event.target.value);
-      });
-    })();
+      updateSceneImages(sceneSelect.value);
+    });
   </script>
 
   </body>
